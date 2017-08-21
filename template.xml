@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<template format="3" revision="1" name="MaterialTabsTemplate" minApi="7" minBuildApi="14" description="Creates a new Activity or Fragment with custom RecyclerView Adapter.">
+
+  <category value="Other"/>
+
+
+  <parameter id="isFragment" name="Need Fragment code instead of Activitiy?" type="boolean" default="false" help="If true, the fragment code will be created instead of Activity"/>
+
+
+  <parameter id="activityClass" name="Activity Name" type="string" constraints="class|unique|nonempty" visibility="!isFragment" suggest="${layoutToActivity(layoutActivityName)}" default="RecyclerViewActivity" help="The name of the activity class to create"/>
+
+  <parameter id="layoutActivityName" name="Layout Name" type="string" constraints="layout|unique|nonempty" visibility="!isFragment" suggest="${activityToLayout(activityClass)}" default="activity_recycler_view" help="The name of the layout to create for the activity"/>
+
+  <parameter id="fragmentClassName" name="Fragment Class Name" type="string" constraints="class|unique|nonempty" visibility="isFragment" default="TabsFragment" help="The name of the fragment class to create"/>
+
+
+  <parameter
+      id="fragmentLayoutName"
+      name="Fragment Layout Name"
+      type="string"
+      constraints="layout|nonempty|unique"
+      default="fragment_tabs"
+      visibility="isFragment"
+      suggest="fragment_${classToResource(fragmentClassName)}"
+      help="The name of the layout to create" />
+
+
+  <parameter id="tabName1" name="Fragment Tab 1 Name" type="string" constraints="class|unique|nonempty" default="FirstFragment" help="The name of the first Tab 1"/>
+
+
+  <parameter id="tabName2" name="Fragment Tab 2 Name" type="string" constraints="class|unique|nonempty" default="SecondFragment" help="The name of the first Tab 2"/>
+
+
+  <parameter id="tabName3" name="Fragment Tab 3 Name" type="string" constraints="class|unique|nonempty" default="ThirdFragment" help="The name of the first Tab 3"/>
+
+
+  <parameter
+      id="tabLayoutName1"
+      name="Tab 1 Layout Name"
+      type="string"
+      constraints="layout|nonempty|unique"
+      default="fragment_first"
+      suggest="fragment_${classToResource(tabName1)}"
+      help="The name of the layout to create" />
+
+
+      <parameter
+          id="tabLayoutName2"
+          name="Tab 2 Layout Name"
+          type="string"
+          constraints="layout|nonempty|unique"
+          default="fragment_second"
+          suggest="fragment_${classToResource(tabName2)}"
+          help="The name of the layout to create" />
+
+
+          <parameter
+              id="tabLayoutName3"
+              name="Tab 3 Layout Name"
+              type="string"
+              constraints="layout|nonempty|unique"
+              default="fragment_third"
+              suggest="fragment_${classToResource(tabName3)}"
+              help="The name of the layout to create" />
+
+
+  <parameter id="activityTitle" name="Title" type="string" constraints="nonempty" default="TabActivity" suggest="${activityClass}" help="The name of the activity. For launcher activities, the application title."/>
+
+  <parameter id="isLauncher" name="Launcher Activity" type="boolean" default="false" visibility="!isFragment" help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher"/>
+
+  <parameter id="isToolbar" name="Need Toolbar" type="boolean" default="false" visibility="!isFragment" help="If true, this activity will have a Toolbar"/>
+
+  <parameter id="isSearch" name="Need Search in Toolbar" type="boolean" default="false" help="If true, this activity will have a Toolbar with Search"/>
+
+
+  <parameter id="packageName" name="Package name" type="string" constraints="package" default="com.mycompany.myapp"/>
+
+
+  <parameter id="tabstyle" name="Tabs Style" type="enum" default="list" help="Choose your own Tab style">
+    <option id="simple">Simple Tabs</option>
+    <option id="scrollable">Simple Scrollable Tabs</option>
+    <option id="icons">Tabs with Icon</option>
+    <option id="iconswithtext">Tabs with Icon and Text</option>
+    <option id="instalikebottomtab">Instagram like botom tab bar navigation</option>
+
+  </parameter>
+
+
+
+  <!-- 128x128 thumbnails relative to template.xml -->
+  <thumbs>
+    <!-- default thumbnail is required -->
+    <thumb>templates_adapter.png</thumb>
+
+  </thumbs>
+
+  <globals file="globals.xml.ftl"/>
+  <execute file="recipe.xml.ftl"/>
+
+</template>
