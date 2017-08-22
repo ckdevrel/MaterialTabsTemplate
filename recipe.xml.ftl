@@ -27,7 +27,7 @@
              to="${escapeXmlAttribute(resOut)}/values/strings.xml" />
 
     <#if !isFragment>
-    <#if isToolbar || isSearch>
+    <#if isToolbar>
     <merge from="res/values/styles.xml.ftl"
             to="${escapeXmlAttribute(resOut)}/values/styles.xml" />
     </#if>
@@ -68,13 +68,6 @@
     <#else>
     <open file="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
 
-    </#if>
-
-
-    <#if isSearch>
-
-    <copy from="res/menu"
-            to="${escapeXmlAttribute(resOut)}/menu" />
     </#if>
 
 

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <#if isToolbar || isSearch>
+        <#if isToolbar>
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,7 +21,7 @@
 
         </#if>
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             <#if tabstyle == 'scrollable'>

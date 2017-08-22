@@ -20,11 +20,12 @@ import android.view.MenuItem;
 
 public class ${activityClass} extends AppCompatActivity {
 
-  <#if isToolbar || isSearch>
+  <#if isToolbar>
     private Toolbar toolbar;
   </#if>
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+
+  private TabLayout tablayout;
+  private ViewPager viewpager;
 
     private String tabNames[] = {"${tab1}","${tab2}","${tab3}"};
 
@@ -33,26 +34,23 @@ public class ${activityClass} extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.${layoutActivityName});
 
-        <#if isToolbar || isSearch>
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        initView();
+
+        <#if isToolbar>
+        initToolbar();
         </#if>
 
-
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
+        setupViewPager(viewpager);
+        tablayout.setupWithViewPager(viewpager);
     }
 
-    <#if isToolbar || isSearch>
+    <#if isToolbar>
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
          switch (item.getItemId()){
              case android.R.id.home:
+                 finish();
                  return true;
          }
 
@@ -69,13 +67,13 @@ public class ${activityClass} extends AppCompatActivity {
                 switch (position) {
 
                     case 0:
-                        return new ${tabName1}.newInstance();
+                        return ${tabName1}.newInstance();
 
                     case 1:
-                        return new ${tabName2}.newInstance();
+                        return ${tabName2}.newInstance();
 
                     case 2:
-                        return new ${tabName3}.newInstance();
+                        return ${tabName3}.newInstance();
 
                 }
                 return null;
@@ -92,6 +90,23 @@ public class ${activityClass} extends AppCompatActivity {
             }
         });
     }
+
+    private void initView() {
+      <#if isToolbar>
+          toolbar = (Toolbar) findViewById(R.id.toolbar);
+      </#if>
+          tablayout = (TabLayout) findViewById(R.id.tablayout);
+          viewpager = (ViewPager) findViewById(R.id.viewpager);
+      }
+
+    <#if isToolbar>
+
+    private void initToolbar() {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    </#if>
+
 
 
 }
