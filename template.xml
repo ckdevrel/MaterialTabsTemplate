@@ -83,6 +83,10 @@
   </parameter>
 
 
+  <parameter id="tabposition" name="Tabs Position" type="enum" default="top" visibility="!(tabstyle =='instalikebottomtab')" help="Choose your own Tab Position">
+    <option id="top">Tabs on top</option>
+    <option id="bottom">Tabs on bottom</option>
+  </parameter>
 
 
   <!-- 128x128 thumbnails relative to template.xml -->

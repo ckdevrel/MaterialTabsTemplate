@@ -41,13 +41,18 @@ public class ${activityClass} extends AppCompatActivity {
         </#if>
 
         setupViewPager(viewpager);
-        tablayout.setupWithViewPager(viewpager);
 
-        <#if tabstyle == 'icons'>
+        setupTabLayout();
+
+        <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
         setupTabIcons();
         </#if>
 
 
+    }
+
+    private void setupTabLayout() {
+        tablayout.setupWithViewPager(viewpager);
     }
 
     <#if isToolbar>
@@ -87,7 +92,12 @@ public class ${activityClass} extends AppCompatActivity {
 
             @Override
             public CharSequence getPageTitle(int position) {
+              <#if tabstyle == 'icons'>
+                return null;
+              <#else>
                 return tabNames[position];
+              </#if>
+
             }
 
             @Override
@@ -113,13 +123,13 @@ public class ${activityClass} extends AppCompatActivity {
     }
     </#if>
 
-<#if tabstyle == 'icons'>
+<#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
 
     private void setupTabIcons() {
            int[] tabIcons = {
-                   R.drawable.{YOUR_DRAWABLE_1},
-                   R.drawable.{YOUR_DRAWABLE_2},
-                   R.drawable.{YOUR_DRAWABLE_3}
+                   R.drawable.YOUR_DRAWABLE_1,
+                   R.drawable.YOUR_DRAWABLE_2,
+                   R.drawable.YOUR_DRAWABLE_3
            };
 
            tablayout.getTabAt(0).setIcon(tabIcons[0]);
