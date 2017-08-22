@@ -42,6 +42,12 @@ public class ${activityClass} extends AppCompatActivity {
 
         setupViewPager(viewpager);
         tablayout.setupWithViewPager(viewpager);
+
+        <#if tabstyle == 'icons'>
+        setupTabIcons();
+        </#if>
+
+
     }
 
     <#if isToolbar>
@@ -106,6 +112,22 @@ public class ${activityClass} extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     </#if>
+
+<#if tabstyle == 'icons'>
+
+    private void setupTabIcons() {
+           int[] tabIcons = {
+                   R.drawable.{YOUR_DRAWABLE_1},
+                   R.drawable.{YOUR_DRAWABLE_2},
+                   R.drawable.{YOUR_DRAWABLE_3}
+           };
+
+           tablayout.getTabAt(0).setIcon(tabIcons[0]);
+           tablayout.getTabAt(1).setIcon(tabIcons[1]);
+           tablayout.getTabAt(2).setIcon(tabIcons[2]);
+       }
+
+</#if>
 
 
 
