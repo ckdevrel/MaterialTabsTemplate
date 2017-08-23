@@ -32,7 +32,6 @@
             app:tabTextColor="#80FFFFFF"
             app:tabGravity="fill"
             app:tabMode="fixed" />
-            </#if>
 
     </android.support.design.widget.AppBarLayout>
 
