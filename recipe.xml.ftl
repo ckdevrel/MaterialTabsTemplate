@@ -81,13 +81,16 @@
                       to="${escapeXmlAttribute(srcOut)}/${tabName3}.java" />
 
     <instantiate from="res/layout/fragment_first.xml.ftl"
-            to="${escapeXmlAttribute(resOut)}/layout/${tabLayoutName1}.xml" />
+                      to="${escapeXmlAttribute(resOut)}/layout/${tabLayoutName1}.xml" />
 
     <instantiate from="res/layout/fragment_second.xml.ftl"
-                    to="${escapeXmlAttribute(resOut)}/layout/${tabLayoutName2}.xml" />
+                      to="${escapeXmlAttribute(resOut)}/layout/${tabLayoutName2}.xml" />
 
     <instantiate from="res/layout/fragment_third.xml.ftl"
-                            to="${escapeXmlAttribute(resOut)}/layout/${tabLayoutName3}.xml" />
+                      to="${escapeXmlAttribute(resOut)}/layout/${tabLayoutName3}.xml" />
+
+    <instantiate from="res/layout/view_tabs.xml.ftl"
+                      to="${escapeXmlAttribute(resOut)}/layout/view_tabs.xml" />
 
 
 </recipe>

@@ -4,6 +4,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +12,11 @@ import android.support.v7.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.List;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.LayoutInflater;
+import android.widget.TextView;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 
@@ -21,7 +27,6 @@ public class ${activityClass} extends AppCompatActivity {
   </#if>
 
   private TabLayout tablayout;
-  private ViewPager viewpager;
 
     private String tabNames[] = {"${tab1}","${tab2}","${tab3}"};
 
@@ -47,6 +52,8 @@ public class ${activityClass} extends AppCompatActivity {
         </#if>
 
         setupTabLayout();
+
+        initTab();
 
     }
 
@@ -94,7 +101,6 @@ public class ${activityClass} extends AppCompatActivity {
           toolbar = (Toolbar) findViewById(R.id.toolbar);
       </#if>
           tablayout = (TabLayout) findViewById(R.id.tablayout);
-          viewpager = (ViewPager) findViewById(R.id.viewpager);
       }
 
     <#if isToolbar>
@@ -119,7 +125,7 @@ public class ${activityClass} extends AppCompatActivity {
 
 
        private View getTabView(int position) {
-           View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.view_tab, null);
+           View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.view_tabs, null);
 
            <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
            ImageView icon = (ImageView) view.findViewById(R.id.tab_icon);
