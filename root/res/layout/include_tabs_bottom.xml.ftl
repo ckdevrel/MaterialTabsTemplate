@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <#if isToolbar>
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <#if isToolbar>
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -19,48 +21,30 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        </#if>
-
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    </#if>
+
+    <FrameLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_marginBottom="?attr/actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-
-  <android.support.design.widget.AppBarLayout
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:clickable="true"
         android:layout_gravity="bottom"
-        android:background="@android:color/white"
-        android:elevation="80dp">
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tablayout"
-            android:layout_width="match_parent"
-            <#if tabstyle == 'icons'>
-            android:layout_height="?attr/actionBarSize"
-            <#else>
-            android:layout_height="wrap_content"
-            </#if>
-            android:background="?attr/colorPrimary"
-            android:clickable="true"
-            app:tabIndicatorHeight="0dp"
-            app:tabSelectedTextColor="@android:color/white"
-            app:tabTextColor="#80FFFFFF"
-            <#if tabstyle == 'scrollable'>
-            app:tabMode="scrollable"/>
-            <#else>
-            app:tabGravity="fill"
-            app:tabMode="fixed" />
-            </#if>
-
-
-
-</android.support.design.widget.AppBarLayout>
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="#80FFFFFF" />
 
 
 </android.support.design.widget.CoordinatorLayout>

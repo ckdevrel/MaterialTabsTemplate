@@ -76,7 +76,6 @@
 
   <parameter id="tabstyle" name="Tabs Style" type="enum" default="simple" help="Choose your own Tab style">
     <option id="simple">Simple Tabs</option>
-    <option id="scrollable">Simple Scrollable Tabs</option>
     <option id="icons">Tabs with Icon</option>
     <option id="iconswithtext">Tabs with Icon and Text</option>
     <option id="instalikebottomtab">Instagram like botom tab bar navigation</option>

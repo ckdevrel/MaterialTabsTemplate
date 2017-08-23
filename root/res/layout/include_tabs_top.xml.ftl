@@ -30,9 +30,6 @@
             </#if>
             app:tabSelectedTextColor="@android:color/white"
             app:tabTextColor="#80FFFFFF"
-            <#if tabstyle == 'scrollable'>
-            app:tabMode="scrollable"/>
-            <#else>
             app:tabGravity="fill"
             app:tabMode="fixed" />
             </#if>
