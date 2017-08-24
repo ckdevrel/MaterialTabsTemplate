@@ -32,10 +32,15 @@ public class ${activityClass} extends AppCompatActivity {
 
     <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
 
-    private int[] tabIcons = {
+    private int[] tabIconsUnSelected = {
                 R.drawable.YOUR_DRAWABLE,
                 R.drawable.YOUR_DRAWABLE,
                 R.drawable.YOUR_DRAWABLE };
+
+    private int[] tabIconsSelected = {
+                R.drawable.YOUR_DRAWABLE,
+                R.drawable.YOUR_DRAWABLE,
+                R.drawable.YOUR_DRAWABLE};
 
     </#if>
 
@@ -125,11 +130,12 @@ public class ${activityClass} extends AppCompatActivity {
 
 
        private View getTabView(int position) {
-           View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.view_tabs, null);
+           View view = LayoutInflater.from(${activityClass}.this).inflate(R.layout.view_tabs, null);
 
            <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
            ImageView icon = (ImageView) view.findViewById(R.id.tab_icon);
-           icon.setImageResource(tabIcons[position]);
+           icon.setImageDrawable(setDrawableSelector(MainActivity.this, tabIconsUnSelected[position], tabIconsSelected[position]));
+
            </#if>
 
            <#if tabstyle == 'simple'|| tabstyle == 'iconswithtext'>
@@ -167,5 +173,34 @@ public class ${activityClass} extends AppCompatActivity {
 
        }
 
+       public static Drawable setDrawableSelector(Context context, int normal, int selected) {
+
+               Drawable state_normal = ContextCompat.getDrawable(context, normal);
+
+               Drawable state_pressed = ContextCompat.getDrawable(context, selected);
+
+               StateListDrawable drawable = new StateListDrawable();
+
+               drawable.addState(new int[]{android.R.attr.state_selected},
+                       state_pressed);
+               drawable.addState(new int[]{android.R.attr.state_enabled},
+                       state_normal);
+
+               return drawable;
+           }
+
+
+
+       public static ColorStateList setTextselector(int normal, int pressed) {
+           ColorStateList colorStates = new ColorStateList(
+                   new int[][]{
+                           new int[]{android.R.attr.state_selected},
+                           new int[]{}
+                   },
+                   new int[]{
+                           pressed,
+                           normal});
+           return colorStates;
+       }
 
 }

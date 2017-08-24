@@ -11,7 +11,10 @@ import android.support.v7.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.List;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.TextView;
+import android.view.LayoutInflater;
+import android.widget.ImageView;
 
 
 public class ${activityClass} extends AppCompatActivity {
@@ -24,6 +27,19 @@ public class ${activityClass} extends AppCompatActivity {
   private ViewPager viewpager;
 
     private String tabNames[] = {"${tab1}","${tab2}","${tab3}"};
+
+    <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
+
+    private int[] tabIconsUnSelected = {
+                R.drawable.YOUR_DRAWABLE,
+                R.drawable.YOUR_DRAWABLE,
+                R.drawable.YOUR_DRAWABLE };
+
+    private int[] tabIconsSelected = {
+                R.drawable.YOUR_DRAWABLE,
+                R.drawable.YOUR_DRAWABLE,
+                R.drawable.YOUR_DRAWABLE};
+    </#if>
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +56,7 @@ public class ${activityClass} extends AppCompatActivity {
 
         setupTabLayout();
 
-        <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
-        setupTabIcons();
-        </#if>
+        initTab();
 
 
     }
@@ -119,22 +133,64 @@ public class ${activityClass} extends AppCompatActivity {
     }
     </#if>
 
-<#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
 
-    private void setupTabIcons() {
-           int[] tabIcons = {
-                   R.drawable.YOUR_DRAWABLE_1,
-                   R.drawable.YOUR_DRAWABLE_2,
-                   R.drawable.YOUR_DRAWABLE_3
-           };
+    private void initTab() {
+           tablayout.getTabAt(0).setCustomView(getTabView(0));
+           tablayout.getTabAt(1).setCustomView(getTabView(1));
+           tablayout.getTabAt(2).setCustomView(getTabView(2));
 
-           tablayout.getTabAt(0).setIcon(tabIcons[0]);
-           tablayout.getTabAt(1).setIcon(tabIcons[1]);
-           tablayout.getTabAt(2).setIcon(tabIcons[2]);
+
        }
 
-</#if>
 
+       private View getTabView(int position) {
+           View view = LayoutInflater.from(${activityClass}.this).inflate(R.layout.view_tabs, null);
+
+           <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
+           ImageView icon = (ImageView) view.findViewById(R.id.tab_icon);
+           icon.setImageDrawable(setDrawableSelector(MainActivity.this, tabIconsUnSelected[position], tabIconsSelected[position]));
+           </#if>
+
+           <#if tabstyle == 'simple'|| tabstyle == 'iconswithtext'>
+           TextView text = (TextView) view.findViewById(R.id.tab_text);
+           text.setText(tabNames[position]);
+           text.setTextColor(setTextselector(Color.parseColor("#50FFFF"), Color.parseColor("#FFFFFF")));
+
+           </#if>
+
+           return view;
+       }
+
+
+       public static Drawable setDrawableSelector(Context context, int normal, int selected) {
+
+        Drawable state_normal = ContextCompat.getDrawable(context, normal);
+
+        Drawable state_pressed = ContextCompat.getDrawable(context, selected);
+
+        StateListDrawable drawable = new StateListDrawable();
+
+        drawable.addState(new int[]{android.R.attr.state_selected},
+                state_pressed);
+        drawable.addState(new int[]{android.R.attr.state_enabled},
+                state_normal);
+
+        return drawable;
+    }
+
+
+
+    public static ColorStateList setTextselector(int normal, int pressed) {
+        ColorStateList colorStates = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_selected},
+                        new int[]{}
+                },
+                new int[]{
+                        pressed,
+                        normal});
+        return colorStates;
+    }
 
 
 }
