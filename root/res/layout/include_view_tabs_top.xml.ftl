@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="4dp">
+    android:padding="2dp">
 
     <#if tabstyle == 'icons'>
 

@@ -93,4 +93,13 @@
                       to="${escapeXmlAttribute(resOut)}/layout/view_tabs.xml" />
 
 
+    <#if tabstyle == 'badgewithicons'>
+
+    <copy from="res/drawable/view_badge_selected.xml.ftl"
+            to="${escapeXmlAttribute(resOut)}/drawable/view_badge_selected.xml" />
+
+    <copy from="res/drawable/view_badge_un_selected.xml.ftl"
+            to="${escapeXmlAttribute(resOut)}/drawable/view_badge_un_selected.xml" />
+    </#if>
+
 </recipe>

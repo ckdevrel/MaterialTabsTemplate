@@ -17,6 +17,13 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.StateListDrawable;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
+import android.widget.RelativeLayout;
+import android.content.Context;
 
 
 
@@ -30,7 +37,7 @@ public class ${activityClass} extends AppCompatActivity {
 
     private String tabNames[] = {"${tab1}","${tab2}","${tab3}"};
 
-    <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
+    <#if tabstyle == 'icons' || tabstyle == 'iconswithtext' || tabstyle == 'badgewithicons'>
 
     private int[] tabIconsUnSelected = {
                 R.drawable.YOUR_DRAWABLE,
@@ -132,7 +139,7 @@ public class ${activityClass} extends AppCompatActivity {
        private View getTabView(int position) {
            View view = LayoutInflater.from(${activityClass}.this).inflate(R.layout.view_tabs, null);
 
-           <#if tabstyle == 'icons' || tabstyle == 'iconswithtext'>
+           <#if tabstyle == 'icons' || tabstyle == 'iconswithtext' || tabstyle == 'badgewithicons'>
            ImageView icon = (ImageView) view.findViewById(R.id.tab_icon);
            icon.setImageDrawable(setDrawableSelector(MainActivity.this, tabIconsUnSelected[position], tabIconsSelected[position]));
 
@@ -141,7 +148,28 @@ public class ${activityClass} extends AppCompatActivity {
            <#if tabstyle == 'simple'|| tabstyle == 'iconswithtext'>
            TextView text = (TextView) view.findViewById(R.id.tab_text);
            text.setText(tabNames[position]);
+           text.setTextColor(setTextselector(Color.parseColor("#F2F2F2"), Color.parseColor("#FFFFFF")));
+
            </#if>
+
+           <#if tabstyle == 'badgewithicons'>
+
+           // TODO: 24/08/17 Disabling badge for second tab. Play with your logics according to your use case.
+            if(position != 1) {
+
+                RelativeLayout rlBadge = (RelativeLayout) view.findViewById(R.id.rl_badge);
+                rlBadge.setVisibility(View.VISIBLE);
+
+                TextView txtBadge = (TextView) view.findViewById(R.id.txt_badge);
+                txtBadge.setBackground(setDrawableSelector(${activityClass}.this, R.drawable.view_badge_un_selected, R.drawable.view_badge_selected));
+
+                // TODO: 24/08/17  Hard coded color just for demo. Pass your own color from colors.xml
+                txtBadge.setTextColor(setTextselector(Color.parseColor("#FFFFFF"), Color.parseColor("#5f8ee4")));
+                txtBadge.setText("10");
+
+            }
+           </#if>
+
 
            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
            return view;

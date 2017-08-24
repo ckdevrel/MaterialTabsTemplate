@@ -78,6 +78,8 @@
     <option id="simple">Simple Tabs</option>
     <option id="icons">Tabs with Icon</option>
     <option id="iconswithtext">Tabs with Icon and Text</option>
+    <option id="badgewithicons">Tabs with Icon and Badge</option>
+
     <option id="instalikebottomtab">Instagram like botom tab bar navigation</option>
   </parameter>
 
