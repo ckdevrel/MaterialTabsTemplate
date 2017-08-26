@@ -95,11 +95,28 @@
 
     <#if tabstyle == 'badgewithicons'>
 
-    <copy from="res/drawable/view_badge_selected.xml.ftl"
-            to="${escapeXmlAttribute(resOut)}/drawable/view_badge_selected.xml" />
+    <copy from="src/app_package/FirstFragment.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/${tabName1}.java" />
 
     <copy from="res/drawable/view_badge_un_selected.xml.ftl"
             to="${escapeXmlAttribute(resOut)}/drawable/view_badge_un_selected.xml" />
+    </#if>
+
+
+    <#if tabposition == 'bottom' && isFragmentHistory>
+
+    <instantiate from="src/app_package/FragNavController.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/FragNavController.java" />
+
+    <instantiate from="src/app_package/FragNavTransactionOptions.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/FragNavTransactionOptions.java" />
+
+    <instantiate from="src/app_package/FragmentHistory.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/FragmentHistory.java" />
+
+    <instantiate from="src/app_package/BaseFragment.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/BaseFragment.java" />
+
     </#if>
 
 </recipe>

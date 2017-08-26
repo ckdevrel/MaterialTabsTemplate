@@ -79,16 +79,15 @@
     <option id="icons">Tabs with Icon</option>
     <option id="iconswithtext">Tabs with Icon and Text</option>
     <option id="badgewithicons">Tabs with Icon and Badge</option>
-
-    <option id="instalikebottomtab">Instagram like botom tab bar navigation</option>
   </parameter>
 
 
-  <parameter id="tabposition" name="Tabs Position" type="enum" default="top" visibility="!(tabstyle =='instalikebottomtab')" help="Choose your own Tab Position">
+  <parameter id="tabposition" name="Tabs Position" type="enum" default="top"  help="Choose your own Tab Position">
     <option id="top">Tabs on top</option>
     <option id="bottom">Tabs on bottom</option>
   </parameter>
 
+<parameter id="isFragmentHistory" name="Need Fragment History stack like Instagram App?" type="boolean" default="false" visibility="(tabposition =='bottom')" help="If true, the Fragment history will be maintained like Instagram App"/>
 
   <!-- 128x128 thumbnails relative to template.xml -->
   <thumbs>
