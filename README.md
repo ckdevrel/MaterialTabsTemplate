@@ -1,4 +1,4 @@
-# MaterialTabs
+# MaterialTabsTemplate
 
 #### Simple Tabs (Top & Bottom)
 
