@@ -7,7 +7,7 @@
 
 #### Icon Tabs (Top & Bottom)
 
-<a href="https://imgur.com/mANfzop"><img src="https://i.imgur.com/mANfzop.png" title="source: imgur.com" height="403" width="200" /></a><a href="https://imgur.com/vk0sscM"><img src="https://i.imgur.com/vk0sscM.png" title="source: imgur.com"height="403" width="200" /></a>
+<a href="https://imgur.com/mANfzop"><img src="https://i.imgur.com/mANfzop.png" title="source: imgur.com" height="403" width="200" /></a><a href="https://imgur.com/vk0sscM"><img src="https://i.imgur.com/vk0sscM.png" title="source: imgur.com" height="403" width="200" /></a>
 
 
 #### Icon with Text Tabs (Top & Bottom)
