@@ -13,62 +13,41 @@
         <dependency mavenUrl="com.android.support:design:${buildApi}.+"/>
     </#if>
 
+
+
+
     <!-- <dependency mavenUrl="com.jakewharton:butterknife:8.5.1"/> -->
 
     <!-- <dependency mavenUrl="com.jakewharton:butterknife-compiler:8.5.1"/> -->
 
 
-    <#if !isFragment>
     <merge from="AndroidManifest.xml.ftl"
              to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
-    </#if>
 
     <merge from="res/values/strings.xml.ftl"
              to="${escapeXmlAttribute(resOut)}/values/strings.xml" />
 
-    <#if !isFragment>
     <#if isToolbar>
     <merge from="res/values/styles.xml.ftl"
             to="${escapeXmlAttribute(resOut)}/values/styles.xml" />
     </#if>
-    </#if>
 
     <!-- Decide what kind of layout(s) to add -->
 
-    <#if isFragment>
 
-    <instantiate from="res/layout/fragment_tabs.xml.ftl"
-            to="${escapeXmlAttribute(resOut)}/layout/${fragmentLayoutName}.xml" />
-
-    <#else>
     <instantiate from="res/layout/activity_tabs.xml.ftl"
               to="${escapeXmlAttribute(resOut)}/layout/${layoutActivityName}.xml" />
 
-    </#if>
 
 
-    <!-- Decide which activity code to add -->
-
-    <#if isFragment>
-
-    <instantiate from="src/app_package/TabsFragment.java.ftl"
-                           to="${escapeXmlAttribute(srcOut)}/${fragmentClassName}.java" />
-
-    <#else>
     <instantiate from="src/app_package/TabsActivity.java.ftl"
                        to="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
 
-    </#if>
 
 
-    <#if isFragment>
-
-    <open file="${escapeXmlAttribute(srcOut)}/${fragmentClassName}.java" />
-
-    <#else>
+    
     <open file="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
 
-    </#if>
 
 
     <instantiate from="src/app_package/FirstFragment.java.ftl"
@@ -103,7 +82,7 @@
 
 
             <copy from="res/drawable/view_badge_un_selected.xml.ftl"
-                    to="${escapeXmlAttribute(resOut)}/drawable/view_badge_selected.xml" />        
+                    to="${escapeXmlAttribute(resOut)}/drawable/view_badge_selected.xml" />
     </#if>
 
 
