@@ -45,7 +45,7 @@
 
 
 
-    
+
     <open file="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
 
 
@@ -81,7 +81,7 @@
             to="${escapeXmlAttribute(resOut)}/drawable/view_badge_un_selected.xml" />
 
 
-            <copy from="res/drawable/view_badge_un_selected.xml.ftl"
+            <copy from="res/drawable/view_badge_selected.xml.ftl"
                     to="${escapeXmlAttribute(resOut)}/drawable/view_badge_selected.xml" />
     </#if>
 

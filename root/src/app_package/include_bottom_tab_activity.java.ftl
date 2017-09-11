@@ -141,7 +141,7 @@ public class ${activityClass} extends AppCompatActivity {
 
            <#if tabstyle == 'icons' || tabstyle == 'iconswithtext' || tabstyle == 'badgewithicons'>
            ImageView icon = (ImageView) view.findViewById(R.id.tab_icon);
-           icon.setImageDrawable(setDrawableSelector(MainActivity.this, tabIconsUnSelected[position], tabIconsSelected[position]));
+           icon.setImageDrawable(setDrawableSelector(${activityClass}.this, tabIconsUnSelected[position], tabIconsSelected[position]));
 
            </#if>
 
