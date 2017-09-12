@@ -3,7 +3,10 @@
 
 Why this Repo?
 
-MaterialTabsTemplate is solely created to reduce the burden of writing same boiler plate for Tabs 
+MaterialTabsTemplate is solely created to reduce the burden of writing same boiler plate codes for Tab creation in Android. 
+
+Following are the possible styles of Tabs that can be generated from MaterialTabsTemplate.
+
 #### Simple Tabs (Top & Bottom)
 
 <a href="https://imgur.com/AAssdIW"><img src="https://i.imgur.com/AAssdIW.png" title="source: imgur.com" height="403" width="200" /></a><a href="https://imgur.com/NRBNjK1"><img src="https://i.imgur.com/NRBNjK1.png" title="source: imgur.com" height="403" width="200" /></a>
@@ -23,5 +26,39 @@ MaterialTabsTemplate is solely created to reduce the burden of writing same boil
 
 <a href="https://imgur.com/1LK1RLn"><img src="https://i.imgur.com/1LK1RLn.png" title="source: imgur.com" height="403" width="200"/></a><a href="https://imgur.com/nlzm74O"><img src="https://i.imgur.com/nlzm74O.png" title="source: imgur.com" height="403" width="200"/></a>
 
+Implementation
+--------------
+
+1. Download or clone this repo
+
+<a href="http://imgur.com/Fpn5F1Q"><img src="http://i.imgur.com/Fpn5F1Q.png" title="source: imgur.com" height="103" width="400"/></a>
+
+2. Rename the downloaded folder to MaterialTabsTemplate and copy the complete folder.
+
+<a href="http://imgur.com/bMZ2ljK"><img src="http://i.imgur.com/bMZ2ljK.png" title="source: imgur.com" height="203" width="400" /></a>
+
+Paste the selected files into
+
+**For Mac**
+
+Go to Applications, Choose Android Studio, Right click and select **Show Package Contents** options.
+
+<a href="http://imgur.com/6jkayYm"><img src="http://i.imgur.com/6jkayYm.png" title="source: imgur.com" height="153" width="400"/></a>
+
+> Navigate to > Contents - Plugins - android - lib - templates - other - paste the downloaded RecyclerViewTemplate folder
+
+**For Windows**
+
+Go to C - Program Files - Android - Android Studio
+
+```
+C:\Program Files\Android\Android Studio\
+```
+
+> Navigate to Plugins - android - lib - templates - other - paste the downloaded MaterialTabsTemplate folder
+
+<a href="http://imgur.com/g6vPucq"><img src="http://i.imgur.com/g6vPucq.png" title="source: imgur.com" height="203" width="250"/></a>  <a href="http://imgur.com/16P1k0s"><img src="http://i.imgur.com/16P1k0s.png" title="source: imgur.com" height="203" width="300"/></a>
+
+<a href="http://imgur.com/JIg6iwM"><img src="http://i.imgur.com/JIg6iwM.png" title="source: imgur.com" height="203" width="300"/></a>
 
 
