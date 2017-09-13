@@ -31,11 +31,11 @@ Implementation
 
 1. Download or clone this repo
 
-<a href="http://imgur.com/Fpn5F1Q"><img src="http://i.imgur.com/Fpn5F1Q.png" title="source: imgur.com" height="103" width="400"/></a>
+<a href="https://imgur.com/Q77IQu6"><img src="https://i.imgur.com/Q77IQu6.png" title="source: imgur.com" /></a>
 
 2. Rename the downloaded folder to MaterialTabsTemplate and copy the complete folder.
 
-<a href="http://imgur.com/bMZ2ljK"><img src="http://i.imgur.com/bMZ2ljK.png" title="source: imgur.com" height="203" width="400" /></a>
+<a href="https://imgur.com/AW7HMd4"><img src="https://i.imgur.com/AW7HMd4.png" title="source: imgur.com" /></a>
 
 Paste the selected files into
 
