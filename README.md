@@ -75,7 +75,7 @@ It is easy and pretty straight forward
 
 And This is how Template Wizard looks like!
 
-<a href="https://imgur.com/KQ1byad"><img src="https://i.imgur.com/KQ1byad.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/KQ1byad"><img src="https://i.imgur.com/KQ1byad.png" title="source: imgur.com" height="403" width="500" /></a>
 
 
 Why TabLayout instead of Design support BottomNavigationView?
