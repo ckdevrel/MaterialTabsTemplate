@@ -71,6 +71,13 @@ It is easy and pretty straight forward
 > - Right click on your project root package.
 > - Navigate to New - Other - MaterialTabsTemplate
 
+<a href="https://imgur.com/suvT0rh"><img src="https://i.imgur.com/suvT0rh.png" title="source: imgur.com" /></a>
+
+And This is how Template Wizard looks like!
+
+<a href="https://imgur.com/KQ1byad"><img src="https://i.imgur.com/KQ1byad.png" title="source: imgur.com" /></a>
+
+
 Why TabLayout instead of Design support BottomNavigationView?
 -------------------------------------------------------------
 I have plenty of reasons for the same as below:
@@ -80,6 +87,10 @@ I have plenty of reasons for the same as below:
 > - Customising text sizes and icon sizes are like a nightmare (Just try adding small sized icon for one tab and big sized icon for the other ;-) ).
 
 Further article on https://blog.f22labs.com/instagram-like-bottom-tab-fragment-transaction-android-389976fb8759
+
+Also refer RecyclerViewTemplate:
+
+https://github.com/TakeoffAndroid/RecyclerViewTemplate
 
 
 Contributions
