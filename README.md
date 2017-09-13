@@ -2,6 +2,7 @@
 
 
 Why this Repo?
+--------------
 
 MaterialTabsTemplate is solely created to reduce the burden of writing same boiler plate codes for Tab creation in Android. 
 
@@ -61,3 +62,30 @@ C:\Program Files\Android\Android Studio\
 
 <a href="https://imgur.com/Qbw4jfr"><img src="https://i.imgur.com/Qbw4jfr.png" title="source: imgur.com" /></a>
 
+Usages
+------
+
+It is easy and pretty straight forward
+
+> - Open your project in Android Studio.
+> - Right click on your project root package.
+> - Navigate to New - Other - MaterialTabsTemplate
+
+Why TabLayout instead of Design support BottomNavigationView?
+-------------------------------------------------------------
+> - I have plenty of reasons for the same as below:
+> - It’s not flexible.
+> - Random behaviour if there are less tab items.
+> - Customising text sizes and icon sizes are like a nightmare (Just try adding small sized icon for one tab and big sized icon for the other ;-) ).
+
+Further article on https://blog.f22labs.com/instagram-like-bottom-tab-fragment-transaction-android-389976fb8759
+
+
+
+
+Contributions
+-------------
+
+Pull requests and contributions are most welcome.
+
+> Any type of Tabs layou on mind? You can always drop a mail!.
