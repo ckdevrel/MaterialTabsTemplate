@@ -73,7 +73,8 @@ It is easy and pretty straight forward
 
 Why TabLayout instead of Design support BottomNavigationView?
 -------------------------------------------------------------
-> - I have plenty of reasons for the same as below:
+I have plenty of reasons for the same as below:
+
 > - It’s not flexible.
 > - Random behaviour if there are less tab items.
 > - Customising text sizes and icon sizes are like a nightmare (Just try adding small sized icon for one tab and big sized icon for the other ;-) ).
@@ -81,11 +82,9 @@ Why TabLayout instead of Design support BottomNavigationView?
 Further article on https://blog.f22labs.com/instagram-like-bottom-tab-fragment-transaction-android-389976fb8759
 
 
-
-
 Contributions
 -------------
 
 Pull requests and contributions are most welcome.
 
-> Any type of Tabs layou on mind? You can always drop a mail!.
+> Any type of Tabs layout on mind? You can always drop a mail!.
