@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<template format="3" revision="1" name="MaterialTabsTemplate" minApi="7" minBuildApi="14" description="Creates a new Activity or Fragment with custom RecyclerView Adapter.">
+<template format="3" revision="1" name="MaterialTabsTemplate" minApi="7" minBuildApi="14" description="Creates a new Activity with Bottom or Top tabs">
 
   <category value="Other"/>
 
